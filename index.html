@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tugas Rizki Nugroho</title>
+    </head>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+
+        * {
+            background-color: rgb(110, 181, 247);
+        }
+        body {
+            margin: 100px 600px;
+            padding: 100px;
+            text-align: center;
+            border: 3px solid black;
+            border-radius: 50px;
+            width: 550px;
+            height: 450px;
+        }
+        body, .a, .a1, .nama {
+            background-color: white;
+        }
+        div .nama {
+            font-family: 'Kalam', cursive;
+        }
+        div.a {
+            text-align: center;
+            style=width:100px;
+            border:1px
+            border-radius:10px;
+            -moz-border-radius:4px;
+            height: 20px;
+            font-family: 'garamound';
+            margin-left: 10px;
+        }
+        .a1:focus {
+            text-decoration: underline;
+            color : blue;
+            cursor: pointer;
+        }
+        .a1{
+            cursor: pointer;
+        }
+        footer{
+            height: 150px;
+            padding-left: 165px; 
+            position: absolute;
+            bottom: 0px;
+        }
+        footer p span {
+	        font-family: 'Kalam', cursive;
+        }
+
+      </style>
+    <body>
+        <header class="nama">
+            <img  width="70px" src="https://indas.id/assets/images/kampus/stmik_insan_pembangunan_066.jpg">
+        </header>
+        <div class="nama">
+            <h3 class="nama" > NAMA  : Rizki Nugroho</h3>
+            <h3 class="nama"> NPM   : 2022804021</h3>
+            <h3 class="nama"> Kelas : Matematika Sistem Informasi</h3>
+        </div>
+        <div class="a">
+        <select class="a1" id="inp1">
+            <option value="space">Select</option>
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+        <select class="a1"id="gate">
+            <option value="and">and</option>
+            <option value="or">or</option>
+            <option value="not">not</option>
+        </select>
+        <select class="a1" id="inp2">
+            <option value="space">Select</option>
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+        </div>
+        <div class="a">
+        <input class="nama" type="textbox" name="display" id="display" >
+        <br>
+        <br>
+        <input class="a1" id="out" type="button" value="Hasil" onclick="output();">
+        </div>
+        <br>
+        <br>
+        <p class="nama"><i class="nama">Keterangan :</i></p>
+        <div class="nama">
+        <img src="https://i.postimg.cc/ZYGC0tgq/image.jpg">
+        </div>
+    </body>
+    <footer>
+        <p class="penghalang"></p>
+        <p> &#169;2022 | <span>Logic Gate by Rizki Nugroho</span></p>
+      </footer>
+    <script>
+        function output()
+        {
+            var inp1 = document.getElementById('inp1').value;
+            var inp2 = document.getElementById('inp2').value;
+            var gate = document.getElementById('gate').value;
+            var result1 = "Output is 1 or True";
+            var result0 = "Output is 0 or False";
+
+            if((inp1 == "1" && gate == "or" && inp2 == "0") || (inp1 == "0" && gate == "or" && inp2 == "1") || (inp1 == "1" && gate == "and" && inp2 == "1")
+                || (inp1 == "1" && gate == "or" && inp2 == "1") || (inp1 == "0" && gate == "not" && inp2 == "space")) 
+                { document.getElementById('display').value = result1;
+                } 
+                else if((inp1 == "0" && gate == "or" && inp2 == "0") || (inp1 == "0" && gate == "and" && inp2 == "1") 
+                || (inp1 == "0" && gate == "and" && inp2 == "0") || (inp1 == "1" && gate == "and" && inp2 == "0") 
+                || (inp1 == "1" && gate == "not" && inp2 == "space") || 
+                (inp1 == "1" && gate == "not" && inp2 == "space"))
+                    {document.getElementById('display').value = result0;}
+                else {
+                    alert("Please isi dulu")
+                }
+        }
+            
+    </script>
+        
+</html>
